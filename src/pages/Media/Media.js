@@ -12,7 +12,7 @@ const Media = () => {
     const { data: allPosts = [], refetch, isLoading } = useQuery({
         queryKey: ['allPosts'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/allPosts')
+            const res = await fetch('https://meetchat-server.vercel.app/allPosts')
             const data = await res.json()
             return data
         }

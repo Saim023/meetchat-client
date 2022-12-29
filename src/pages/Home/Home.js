@@ -16,7 +16,7 @@ const Home = () => {
     const { data: topPosts = [], refetch, isLoading } = useQuery({
         queryKey: ['topPosts'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/topPosts')
+            const res = await fetch('https://meetchat-server.vercel.app/topPosts')
             const data = await res.json()
             return data
         }
@@ -47,7 +47,7 @@ const Home = () => {
                         image: imgData.data.url
                     }
 
-                    fetch('http://localhost:5000/posts', {
+                    fetch('https://meetchat-server.vercel.app/posts', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
